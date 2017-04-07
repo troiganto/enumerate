@@ -1,7 +1,7 @@
-# Enumerate.hpp – C++ Templates to Iterate Over Enums
+# enumerate.hpp – C++ templates to iterate over enums
 
-This header contains a function `enumerate()` that allows you to
-iterate over an `enum`.
+This header contains a variable template `enumerate::enumerate` that
+allows you to iterate over an `enum`.
 
 ## Example
 
@@ -43,12 +43,15 @@ int main() {
 }
 ```
 
-For C++11, where variable templates don't exist yet, the syntax is
-slightly different:
+
+## Support for C++11
+
+Variable templates were introduced in C++14. For C++11, this header
+offers a slightly different syntax:
 ```c++
 // Mind the capital E.
 using enumerate::Enumerate;
-for (const auto fruit : Enumerate<Fruit>()) {
+for (const auto fruit : Enumerate<Fruit>{}) {
     std::cout << name(fruit) << std::endl;
 }
 ```
@@ -68,5 +71,4 @@ contribute, please fork the repository and use a feature branch.
 
 ## Licensing
 
-This project is licensed under the MIT license. for more information,
-see the file `LICENSE`.
+This project is licensed under the MIT license.
